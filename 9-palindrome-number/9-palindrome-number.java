@@ -3,8 +3,7 @@ class Solution {
         if (x < 0) {
             return false;
         }
-        int y = reverseNumber(x);
-        return y == x;
+        return reverseNumber(x) == x;
 
 
         

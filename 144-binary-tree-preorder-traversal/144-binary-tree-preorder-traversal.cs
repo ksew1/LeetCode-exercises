@@ -12,21 +12,21 @@
  * }
  */
 public class Solution {
-    public IList<int> list;
+    
     public IList<int> PreorderTraversal(TreeNode root) {
-        this.list = new List<int>();
-        Visit(root);
-        return this.list;
-        
-        
-    }
-    public void Visit(TreeNode node) {
-        if (node == null) {
-            return;
+        var list = new List<int>();
+        var stack = new Stack<TreeNode>();
+        stack.Push(root);
+        while (stack.Count > 0) {
+            var node = stack.Pop();
+            if (node != null) {
+                list.Add(node.val);
+                stack.Push(node.right);
+                stack.Push(node.left);
+                
+            }
         }
-        list.Add(node.val);
-        Visit(node.left);
-        Visit(node.right);
-        
+        return list;
+      
     }
 }

@@ -7,7 +7,7 @@
  */
 object Solution {
     def deleteDuplicates(head: ListNode): ListNode = {
-        if (head == null || head.next == null) return head
+        if (head == null) return head
         var p = head
 
         while (p != null && p.next != null) {

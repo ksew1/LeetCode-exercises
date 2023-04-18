@@ -1,8 +1,7 @@
 object Solution {
     def mergeAlternately(word1: String, word2: String): String = {
-        val n = word1.length.max(word2.length)
         val s = new StringBuilder()
-        for(i <- 0 until n) {
+        for(i <- 0 until word1.length.max(word2.length)) {
             if (i < word1.length) {
                 s += word1(i)
             }
